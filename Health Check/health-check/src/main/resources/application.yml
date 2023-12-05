@@ -1,0 +1,28 @@
+# Show details of health endpoint
+management:
+  endpoint:
+    health:
+      show-details: always
+
+# Use "*" to expose all endpoints, or a comma-separated list to expose selected ones
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+  health:
+    probes:
+      enabled: true
+
+
+# H2 Properties
+server:
+  port: 9292
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+  h2:
+    console:
+      enabled: true
+      path: /h2
